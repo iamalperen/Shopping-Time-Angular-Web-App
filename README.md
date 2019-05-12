@@ -1,6 +1,6 @@
-# ShoppingTime
+# Shopping Time App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+Sizden B2B alanında hizmet edecek bir web portali için ürün listeleme ve alışveriş sepeti yönetimi yapmanız istenmektedir. Bu case’de alışveriş sepeti tasarlamanızı ve ürün listesinden herhangi bir ürünü sepete ekleyebilmeyi istiyoruz. Sepette kaç farklı ürün olduğu bilgisini sitenin üst bölümündeki menülerde de görebilmeliyiz. Sepet içerisinden eklenen ürünlerin adetlerini değiştirebilmeyi veya silebilmeyi istiyoruz. 0 adetli bir ürün sepette bulunamaz, en az 1 adet olabilmeli. Bu problemi merkezi durum yönetimi (State Management - Redux / NGRX) yaklaşımıyla hazırlamanızı istiyoruz. Kodunuzun test edilebilir olması ve gerekli test / build scriptlerinin package.json dosyasında hazırlanmasını istiyoruz. Geliştirdiğiniz uygulama dev, test ve prod ortamlarına farklı konfigürasyonlarda dağıtıma hazırlanmalı. Konfigürasyonları dışarıdan değiştirebilir halde tutun. Dağıtım için konteyner teknolojisi kullanabilirsiniz. Geliştirdiğiniz uygulamanın bakımı ve yeni özelliklerin geliştirilebilmesi için test kodlarını ve Commit mesajlarınızı düzenli yazmanız önemli.
 
 ## Development server
 
