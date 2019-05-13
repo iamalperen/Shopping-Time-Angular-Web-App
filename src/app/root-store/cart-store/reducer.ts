@@ -5,10 +5,14 @@ import {initialState, State} from './state';
 export function cartReducer(state = initialState, action: Actions): State {
   switch (action.type) {
     case ActionTypes.ADD_TO_CART: {
+      const addedCartItem = action.payload;
+      const existItem = state.cartItems.find(obj => {return obj.item.id === addedCartItem.item.id;});
+      if(existItem){ existItem.amount++; }
+      else {  state.cartItems = [...state.cartItems, addedCartItem]}
       return {
-        cartItems: [...state.cartItems, action.payload],
-        sum: state.sum + action.payload.item.price,
-        total: state.cartItems.length + 1,
+        cartItems: [...state.cartItems],
+        sum: state.sum + addedCartItem.item.price,
+        total: state.cartItems.length,
         isLoading: true,
         error: null
       };
