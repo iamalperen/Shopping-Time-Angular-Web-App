@@ -1,3 +1,18 @@
-<p>
-  header works!
-</p>
+<header class="header">
+  <nav class="container header__nav">
+    <div class="header__logo-section">
+      <a routerLink="/" class="header__logo-link">
+        <i class="fas fa-shipping-fast"></i>
+        Shopping Time
+      </a>
+    </div>
+    <ul class="header__menu-section" *ngIf="router.url != '/cart'">
+      <li class="header__menu-item cart-items">
+        <a class="header__menu-item-link" routerLink="/cart">
+          <span class="header__menu-cart-items">{{cart$ | async}}</span>
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

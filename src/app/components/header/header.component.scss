@@ -1,0 +1,30 @@
+
+
+.header {
+    background-color: #3783b5;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.header__logo-link{
+    font-size: 24px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.cart-items .header__menu-item-link {
+    display: inline-block;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.header__menu-item.cart-items:hover {
+    background-color: rgba(37, 54, 74, 0.39);
+    border-radius: 5px;
+}
