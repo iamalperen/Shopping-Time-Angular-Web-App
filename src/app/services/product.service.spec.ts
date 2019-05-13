@@ -31,7 +31,7 @@ describe('ProductService', () => {
     ];
 
     service.getProducts().subscribe((data: Product[]) => {
-      expect(data.length).toBe(6);
+      expect(data.length).toBe(7);
       expect(data[0].name).toBe('Macbook Pro');
       expect(data[2].name).toBe('Macbook Air');
       expect(data[5].name).toBe('iMac');

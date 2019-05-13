@@ -1,3 +1,16 @@
-<p>
-  product works!
-</p>
+
+<div class="product">
+  <div class="product__img-container">
+      <img class="product__img" src="{{product?.img}}"/>
+  </div>
+  <div class="product__details">
+      <h2 class="product__name">{{product?.name}}</h2>
+      <h2 class="product__price">${{product?.price}}</h2>
+  </div>
+  <div class="product__actions">
+      <button class="product__add-to-cart-btn" (click)="addToCart(product)">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="align-middle">Add to cart</span>
+      </button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+
+
+.product-list{
+    margin-top: 30px;
+}
+
+.product-list__title {
+    font-weight: 400;
+    color: #25364a;
+    font-size: 2rem;
+    margin: 24px 0;
+    border-bottom: 1px solid #e2e8ee;
+    padding-bottom: 20px;
+  }
+
+  .product-list__products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-list__no-products-found{
+      font-size: 1.25rem;
+  }

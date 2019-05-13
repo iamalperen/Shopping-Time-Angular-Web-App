@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { routes } from '../../app-routing.module'
 import { ProductListComponent } from '../product-list/product-list.component';
 import { CartComponent } from '../cart/cart.component';
+import { ProductComponent } from '../product/product.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -16,7 +17,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent, ProductListComponent, CartComponent ],
+      declarations: [ HeaderComponent, ProductListComponent, CartComponent, ProductComponent ],
       imports: [RouterTestingModule.withRoutes(routes)]
     })
     .compileComponents();

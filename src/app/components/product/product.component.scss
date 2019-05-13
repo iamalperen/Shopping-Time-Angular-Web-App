@@ -1,0 +1,27 @@
+
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ededed;
+    border-radius: 0.2rem;
+    height: 360px;
+    margin: 10px;
+  }
+  
+.product__img {
+  width: 100%;
+}
+
+.product__details {
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.product__add-to-cart-btn{
+  padding: 10px;
+  color: #fff;
+  background-color: #7bb859;
+  border: 0;
+}
