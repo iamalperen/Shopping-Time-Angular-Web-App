@@ -1,3 +1,32 @@
-<p>
-  cart works!
-</p>
+<div class="cart">
+    <div class="cart__header">
+        <h1 class="cart__title">Cart</h1>
+        <div class="cart__clear-btn-container">
+            <button class="cart__clear-btn" (click)="clearCart()">
+                <i class="fas fa-trash-alt"></i>
+                <span class="align-middle">Clear</span>
+            </button>
+        </div>
+    </div>
+    <div class="cart__body">
+        <div class="product-list__products" *ngIf="(cartItems$ | async)?.length > 0">
+            <app-cart-item *ngFor="let item of cartItems$ | async" [item]="item"></app-cart-item>
+        </div>
+        <div class="product-list__no-products-found" *ngIf="(cartItems$ | async)?.length === 0">Cart is empty!</div>
+    </div>
+    <div class="cart__footer">
+        <div class="cart__go-back-btn">
+            <a routerLink="/" class="btn btn-white">
+                <i class="fas fa-chevron-left"></i>
+                <span class="align-middle">Continue shopping</span>
+            </a>
+        </div>
+        <div class="cart__total">
+            <p class="lead">
+                <span class="mr-3">Total:</span> <strong> $ {{cartSum$ | async | number : '1.2-2'}}</strong>
+            </p>
+        </div>
+    </div>
+</div>
+
+

@@ -1,3 +1,21 @@
-<p>
-  cart-item works!
-</p>
+<div class="cart-item">
+  <div class="cart-item__details">
+    <img class="cart-item__img" src="{{item.item.img}}">
+    <div class="cart-item__info">
+      <span>{{item.item.name}}</span>
+    </div>
+    <div class="cart-item__price">
+      $ {{item.item.price}}
+    </div>
+    <div class="cart-item__quantity">
+      <input class="input" type="number" value="{{item.amount}}"
+             (input)="onAmountChange($event.target.value, item)">
+    </div>
+    <div class="cart-item__actions">
+      <button class="cart-item__remove-btn" (click)="removeItem()">
+        <i class="fas fa-times-circle"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
