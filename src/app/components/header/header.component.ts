@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
+import { Store } from '@ngrx/store';
+import { RootStoreState } from 'src/app/root-store';
+import { CartStoreSelectors } from 'src/app/root-store/cart-store';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +13,12 @@ import {Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
   cart$: Observable<number>;
 
-  constructor(private router: Router) { }
+  constructor(private store$: Store<RootStoreState.State>, private router: Router) { }
 
   ngOnInit() {
+    this.cart$ = this.store$.select(
+      CartStoreSelectors.selectCartTotal
+    );
   }
 
 }
