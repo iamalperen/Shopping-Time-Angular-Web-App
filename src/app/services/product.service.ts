@@ -12,12 +12,12 @@ export class ProductService {
      */
     public getProducts(): Observable<Product[]> {
         return Observable.create((observer: Observer<Product[]>) => {
-            observer.next(this.products());
+            observer.next(this.fetchProducts());
             return observer;
         });
     }
 
-    private products(): Product[] {
+    private fetchProducts(): Product[] {
         return [
             {id: 1, name: 'Macbook Pro', img: '/assets/img/macbook-pro.jpg', price: 1123.09},
             {id: 2, name: 'iPhone 6', img: '/assets/img/macbook-pro.jpg', price: 599.09},
