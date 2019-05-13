@@ -8,6 +8,7 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RootStoreModule } from './root-store';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RootStoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
