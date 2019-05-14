@@ -5,6 +5,9 @@ import { ProductComponent } from '../product/product.component';
 import { ProductService } from '../../services/product.service';
 import {Product} from '../../models';
 import { By } from '@angular/platform-browser';
+import { Observer, Observable } from 'rxjs';
+import { RootStoreModule } from 'src/app/root-store';
+import { CartItemComponent } from '../cart-item/cart-item.component';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -12,7 +15,8 @@ describe('ProductListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductListComponent, ProductComponent ]
+      declarations: [ProductListComponent, ProductComponent, CartItemComponent],
+      imports: [RootStoreModule]
     })
     .compileComponents();
   }));
@@ -28,14 +32,18 @@ describe('ProductListComponent', () => {
   });
 
   it('should display products if exists', () => {
-    expect(component.products$.length).toBe(7);
-    expect(fixture.debugElement.query(By.css('.product-list__products')).nativeElement).not.toBeUndefined;
+    component.products$.subscribe((data) => {
+      expect(data.length).toBe(7);
+      expect(fixture.debugElement.query(By.css('.product-list__products')).nativeElement).not.toBeUndefined;
+    });      
   });
 
   it('should not display products if not exist', () => {
-    component.products$ = [];
-    expect(component.products$.length).toBe(0);
-    expect(fixture.debugElement.query(By.css('.product-list__products')).nativeElement).toBeUndefined;
+    component.products$ = Observable.create((observer: Observer<Product[]>) => {observer.next([])});
+    component.products$.subscribe((data) => {
+      expect(data.length).toBe(0);
+      expect(fixture.debugElement.query(By.css('.product-list__products')).nativeElement).toBeUndefined;
+    });      
   });
 
 });

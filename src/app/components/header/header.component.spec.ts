@@ -8,6 +8,8 @@ import { routes } from '../../app-routing.module'
 import { ProductListComponent } from '../product-list/product-list.component';
 import { CartComponent } from '../cart/cart.component';
 import { ProductComponent } from '../product/product.component';
+import { CartItemComponent } from '../cart-item/cart-item.component';
+import { RootStoreModule } from 'src/app/root-store';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -17,8 +19,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent, ProductListComponent, CartComponent, ProductComponent ],
-      imports: [RouterTestingModule.withRoutes(routes)]
+      declarations: [ HeaderComponent, ProductListComponent, CartComponent, ProductComponent, CartItemComponent ],
+      imports: [RouterTestingModule.withRoutes(routes), RootStoreModule]
     })
     .compileComponents();
   }));

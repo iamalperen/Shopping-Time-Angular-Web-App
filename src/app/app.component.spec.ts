@@ -8,6 +8,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { ProductService } from './services';
+import { RootStoreModule } from './root-store';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -18,15 +21,18 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule.withRoutes(routes)
+        RouterTestingModule.withRoutes(routes),
+        RootStoreModule
       ],
       declarations: [
         AppComponent,
         HeaderComponent,
         ProductListComponent, 
         ProductComponent,
-        CartComponent
+        CartComponent,
+        CartItemComponent
       ],
+      providers: [ProductService]
     }).compileComponents();
   }));
 
