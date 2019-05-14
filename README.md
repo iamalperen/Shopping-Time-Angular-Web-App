@@ -12,29 +12,28 @@ Shopping Cart Application with Angular 7.2.0
 
 ## Development server
 
-Run `ng serve` for a dev server after first build. 
+- Run `ng serve` for a dev server after first build. 
 
-Navigate to `http://localhost:4200/`. 
+- Navigate to `http://localhost:4200/`. 
 
-The app will automatically reload if you change any of the source files.
+- The app will automatically reload if you change any of the source files.
 
 ### For Different Environment Configurations
 
 #### Production Build 
-run `ng build --configuration=production` to build project in prod environment
+- run `ng build --configuration=production` to build project in prod environment
 run `ng serve --configuration=production` to serve project in prod environment
 
 #### Development Build 
-run `ng build --configuration=development` to build project in dev environment
-run `ng serve --configuration=development` to serve project in dev environment
+- run `ng build --configuration=development` to build project in dev environment
+- run `ng serve --configuration=development` to serve project in dev environment
 
 #### Test Build 
-run `ng build --configuration=test` to build project in test environment
-run `ng serve --configuration=test` to serve project in test environment
+- run `ng build --configuration=test` to build project in test environment
+- run `ng serve --configuration=test` to serve project in test environment
 
 ## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Docker
 
