@@ -22,7 +22,7 @@ Shopping Cart Application with Angular 7.2.0
 
 #### Production Build 
 - run `ng build --configuration=production` to build project in prod environment
-run `ng serve --configuration=production` to serve project in prod environment
+- run `ng serve --configuration=production` to serve project in prod environment
 
 #### Development Build 
 - run `ng build --configuration=development` to build project in dev environment
