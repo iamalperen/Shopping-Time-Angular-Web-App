@@ -1,8 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ProductListComponent } from './product-list.component';
 import { ProductComponent } from '../product/product.component';
-import { ProductService } from '../../services/product.service';
 import {Product} from '../../models';
 import { By } from '@angular/platform-browser';
 import { Observer, Observable } from 'rxjs';

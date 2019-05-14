@@ -2,13 +2,13 @@
   <div class="cart-item__details">
     <img class="cart-item__img" src="{{item.item.img}}">
     <div class="cart-item__info">
-      <span>{{item.item.name}}</span>
+      <span class="cart-item__name">{{item.item.name}}</span>
     </div>
     <div class="cart-item__price">
-      $ {{item.item.price}}
+      $ <span class="cart-item__price-amount">{{item.item.price}}</span>
     </div>
     <div class="cart-item__quantity">
-      <input class="input" type="number" value="{{item.amount}}"
+      <input class="input cart-item__amount-input" type="number" value="{{item.amount}}"
              (input)="onAmountChange($event.target.value, item)">
     </div>
     <div class="cart-item__actions">

@@ -19,7 +19,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent, ProductListComponent, CartComponent, ProductComponent, CartItemComponent ],
+      declarations: [HeaderComponent, ProductListComponent, CartComponent, ProductComponent, CartItemComponent],
       imports: [RouterTestingModule.withRoutes(routes), RootStoreModule]
     })
     .compileComponents();

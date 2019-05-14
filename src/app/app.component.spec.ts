@@ -9,7 +9,6 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
-import { ProductService } from './services';
 import { RootStoreModule } from './root-store';
 
 describe('AppComponent', () => {
@@ -20,32 +19,19 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule.withRoutes(routes),
-        RootStoreModule
-      ],
-      declarations: [
-        AppComponent,
-        HeaderComponent,
-        ProductListComponent, 
-        ProductComponent,
-        CartComponent,
-        CartItemComponent
-      ],
-      providers: [ProductService]
+      imports: [RouterTestingModule.withRoutes(routes), RootStoreModule],
+      declarations: [AppComponent, HeaderComponent, ProductListComponent, ProductComponent, CartComponent, CartItemComponent]
     }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
-
     router = TestBed.get(Router);
     location = TestBed.get(Location);
-
     fixture.detectChanges();
     router.initialNavigation();
-    });
+  });
 
   it('should be created', () => {
     expect(component).toBeTruthy();
@@ -56,7 +42,7 @@ describe('AppComponent', () => {
       expect(location.path()).toBe("/products");
     });
   });
-
+  
   it('should redirect any route not in routes like "xyz" url to "/products"', () => {
     router.navigate(['xyz']).then(() => {
       expect(location.path()).toBe("/products");

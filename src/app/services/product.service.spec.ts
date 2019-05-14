@@ -19,7 +19,7 @@ describe('ProductService', () => {
     expect(service.getProducts()).not.toBeNaN();
   });
 
-  it('#fetchProducts should return products correctly', () => {
+  it('#fetchProducts should return products data', () => {
     const service: ProductService = TestBed.get(ProductService);
     const products =   [
       {id: 1, name: 'Macbook Pro', img: '/assets/img/macbook-pro.jpg', price: 1123.09},

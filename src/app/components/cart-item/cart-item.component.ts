@@ -13,11 +13,9 @@ import {Store} from '@ngrx/store';
 export class CartItemComponent implements OnInit {
     @Input() item: CartItem;
 
-    constructor(private store$: Store<RootStoreState.State>) {
-    }
+    constructor(private store$: Store<RootStoreState.State>) { }
 
-    ngOnInit() {
-    }
+    ngOnInit() { }
 
     removeItem() {
         this.store$.dispatch(new CartStoreActions.RemoveItemFromCartAction(this.item));

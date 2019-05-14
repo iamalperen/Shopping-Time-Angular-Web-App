@@ -62,7 +62,6 @@
   line-height: 1.2;
   border-radius: .25rem;
   text-decoration: none;
-  font-family: Helvetica Neue, Helvetica, Arial;
 }
 
 .cart__go-back-btn a i {
@@ -78,5 +77,8 @@
 .lead {
   font-size: 1.09375rem;
   font-weight: 300;
-  font-family: Helvetica Neue, Helvetica, Arial;
+}
+
+.product-list__no-products-found {
+  font-size: 24px;
 }
