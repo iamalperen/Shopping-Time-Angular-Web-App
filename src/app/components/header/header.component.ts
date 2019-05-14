@@ -13,7 +13,7 @@ import { CartStoreSelectors } from 'src/app/root-store/cart-store';
 export class HeaderComponent implements OnInit {
   cart$: Observable<number>;
 
-  constructor(private store$: Store<RootStoreState.State>, private router: Router) { }
+  constructor(private store$: Store<RootStoreState.State>, public router: Router) { }
 
   ngOnInit() {
     this.cart$ = this.store$.select(
