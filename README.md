@@ -1,27 +1,74 @@
-# Shopping Time App
+# Shopping Time Angular Web App
 
-Sizden B2B alanında hizmet edecek bir web portali için ürün listeleme ve alışveriş sepeti yönetimi yapmanız istenmektedir. Bu case’de alışveriş sepeti tasarlamanızı ve ürün listesinden herhangi bir ürünü sepete ekleyebilmeyi istiyoruz. Sepette kaç farklı ürün olduğu bilgisini sitenin üst bölümündeki menülerde de görebilmeliyiz. Sepet içerisinden eklenen ürünlerin adetlerini değiştirebilmeyi veya silebilmeyi istiyoruz. 0 adetli bir ürün sepette bulunamaz, en az 1 adet olabilmeli. Bu problemi merkezi durum yönetimi (State Management - Redux / NGRX) yaklaşımıyla hazırlamanızı istiyoruz. Kodunuzun test edilebilir olması ve gerekli test / build scriptlerinin package.json dosyasında hazırlanmasını istiyoruz. Geliştirdiğiniz uygulama dev, test ve prod ortamlarına farklı konfigürasyonlarda dağıtıma hazırlanmalı. Konfigürasyonları dışarıdan değiştirebilir halde tutun. Dağıtım için konteyner teknolojisi kullanabilirsiniz. Geliştirdiğiniz uygulamanın bakımı ve yeni özelliklerin geliştirilebilmesi için test kodlarını ve Commit mesajlarınızı düzenli yazmanız önemli.
+Shopping Cart Application with Angular 7.2.0
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- make sure you have npm on your dev machine
+- run `npm install -g @angular/cli` to install angular-cli tool
+- run `npm install` to install npm dependencies of project
+- run `ng build` to build project
+
+## Development server
+
+Run `ng serve` for a dev server after first build. 
+
+Navigate to `http://localhost:4200/`. 
+
+The app will automatically reload if you change any of the source files.
+
+### For Different Environment Configurations
+
+#### Production Build 
+run `ng build --configuration=production` to build project in prod environment
+run `ng serve --configuration=production` to serve project in prod environment
+
+#### Development Build 
+run `ng build --configuration=development` to build project in dev environment
+run `ng serve --configuration=development` to serve project in dev environment
+
+#### Test Build 
+run `ng build --configuration=test` to build project in test environment
+run `ng serve --configuration=test` to serve project in test environment
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Docker
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+First pull ngnix
 
-## Further help
+```
+docker pull nginx:alpine
+```
+Run ngnix
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+docker run -d -p 8080:80 nginx:alpine
+```
+
+Build prod version of project
+
+```
+ng build --configuration=production
+```
+
+Build docker container
+
+```
+docker build . -t shopping-time:latest
+```
+
+Run docker container
+
+```
+docker run -d -p 8080:80 shopping-time:latest
+```
+
+And now the app is accessible on `http://localhost:8080`
+
+
+## Author and License
+Created and maintained by [Alperen](https://github.com/alperentalaslioglu) under [MIT](LICENCE.md) License
