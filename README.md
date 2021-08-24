@@ -74,4 +74,4 @@ And now the app is accessible on `http://localhost:8080`
 
 
 ## Author and License
-Created and maintained by [Alperen](https://github.com/alperentalaslioglu) under [MIT](LICENCE.md) License
+Created and maintained by [Alperen](https://github.com/alperentalaslioglu) under [MIT](LICENSE.md) License
